@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sass": "sass --watch src/css/main.scss:src/css/main.css"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "preact": "^10.13.1"
+    "preact": "^10.13.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
