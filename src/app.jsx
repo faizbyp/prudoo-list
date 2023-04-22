@@ -10,13 +10,15 @@ export function App() {
   });
 
   useEffect(() => {
-    // localstorage only support storing strings as keys and values
-    // - therefore we cannot store arrays and objects without converting the object
-    // into a string first. JSON.stringify will convert the object into a JSON string
     localStorage.setItem("todos", JSON.stringify(todos));
-    // add the todos as a dependancy because we want to update
-    // localstorage anytime the todos state changes
   }, [todos]);
+
+  function handleDelete(id) {
+    const removeItem = todos.filter((todo) => {
+      return todo.id !== id;
+    });
+    setTodos(removeItem);
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -33,8 +35,8 @@ export function App() {
 
   return (
     <>
-      <nav className='text-center py-3 bg-primary text-white'>
-        <img src={PreactLogo} alt="" />
+      <nav className='text-center py-3 bg-primary'>
+        <img src={PreactLogo} alt="Preact Todo List" />
       </nav>
       <div className="container">
         <form className='row py-3 mx-1' onSubmit={handleSubmit}>
@@ -46,7 +48,10 @@ export function App() {
           <div className="col">
             <ul className="list-unstyled">
               {todos.map((todo) => (
-                <li key={todo.id} className='bg-warning p-2 my-2 rounded'>{todo.value}</li>
+                <li key={todo.id} className='bg-warning p-2 my-2 rounded'>
+                  {todo.value}
+                  <button className='btn btn-danger ms-2' onClick={() => handleDelete(todo.id)}>X</button>
+                </li>
               ))}
             </ul>
           </div>
