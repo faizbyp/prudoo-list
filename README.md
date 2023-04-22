@@ -1,4 +1,6 @@
-# Preact Todo List
+# Prudoo List
+
+> Simple todo list using Preact and localStorage
 
 ### Hi!
 
