@@ -37,16 +37,16 @@ export function App() {
         <img src={PreactLogo} alt="" />
       </nav>
       <div className="container">
-        <form className='row py-3 mx-2' onSubmit={handleSubmit}>
+        <form className='row py-3 mx-1' onSubmit={handleSubmit}>
           <input className='text-center mb-2' value={input} type="text" onChange={(e) => {setInput(e.target.value)}} />
-          <button className='btn btn-primary text-white' type="submit">Add Task</button>
+          <button className='btn btn-primary' type="submit">Add Task</button>
         </form>
 
         <div className="row">
           <div className="col">
-            <ul className="todo-list">
+            <ul className="list-unstyled">
               {todos.map((todo) => (
-                <li key={todo.id}>{todo.value}</li>
+                <li key={todo.id} className='bg-warning p-2 my-2 rounded'>{todo.value}</li>
               ))}
             </ul>
           </div>
