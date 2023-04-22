@@ -98,6 +98,10 @@ export function App() {
           </div>
         </div>
       </div>
+
+      <footer className="text-center py-3">
+        <a href="https://www.linkedin.com/in/faizbyp/" target='_blank'>faizbyp</a>
+      </footer>
     </>
   )
 }
