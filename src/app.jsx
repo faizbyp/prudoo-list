@@ -31,10 +31,12 @@ export function App() {
   }
 
   function handleDelete(id) {
-    const removeItem = todos.filter((todo) => {
-      return todo.id !== id;
-    });
-    setTodos(removeItem);
+    if (confirm('Are you sure to delete?')) {
+      const removeItem = todos.filter((todo) => {
+        return todo.id !== id;
+      });
+      setTodos(removeItem);
+    }
   }
 
   function handleSubmit(e) {
@@ -57,8 +59,8 @@ export function App() {
       </nav>
 
       <div className="container">
-        <form className='row py-3 mx-1' onSubmit={handleSubmit}>
-          <input className='form-control form-control-lg text-center my-2' value={input} type="text" onChange={(e) => {setInput(e.target.value)}} />
+        <form className='sticky-top row py-3 mx-1' onSubmit={handleSubmit}>
+          <input className='form-control form-control-lg text-center my-2' placeholder='Insert Task' value={input} type="text" onChange={(e) => {setInput(e.target.value)}} />
           <button className='btn btn-lg btn-primary' type="submit">Add Task</button>
         </form>
         <div className="row">
@@ -68,9 +70,11 @@ export function App() {
                 <li key={todo.id} className='bg-warning p-2 my-2 rounded'>
                   {todo.text}
                   <button onClick={() => handleEdit(todo)} type="button" class="btn btn-light ms-2" data-bs-toggle="modal" data-bs-target="#editModal">
-                    Edit
+                    <i class="bi bi-pencil-fill"></i>
                   </button>
-                  <button type='button' className='btn btn-danger ms-2' onClick={() => handleDelete(todo.id)}>X</button>
+                  <button type='button' className='btn btn-danger ms-2' onClick={() => handleDelete(todo.id)}>
+                    <i class="bi bi-trash3-fill"></i>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -87,7 +91,7 @@ export function App() {
             </div>
             <div class="modal-body">
               <form onSubmit={handleEditFormSubmit}>
-                <input className='form-control form-control-lg text-center my-2 w-100' value={currentTodo.text} type="text" onChange={(e) => setCurrentTodo({...currentTodo, text: e.target.value})} />
+                <input className='form-control form-control-lg text-center my-2 w-100' placeholder='Edit Task' value={currentTodo.text} type="text" onChange={(e) => setCurrentTodo({...currentTodo, text: e.target.value})} />
                 <button type="submit" class="btn btn-lg btn-primary w-100" data-bs-dismiss="modal">Save changes</button>
               </form>
             </div>
