@@ -100,7 +100,7 @@ export function App() {
       </div>
 
       <footer className="text-center py-3">
-        <a href="https://www.linkedin.com/in/faizbyp/" target='_blank'>faizbyp</a>
+        <a href="https://www.linkedin.com/in/faizbyp/" target='_blank'>faizbyp</a> | <a href="https://github.com/faizbyp/prudoo-list" target='_blank'>Repo</a>
       </footer>
     </>
   )
