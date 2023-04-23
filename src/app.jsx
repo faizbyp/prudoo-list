@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'preact/hooks'
 import { v4 as uuid } from 'uuid';
-import PreactLogo from '../public/favicon-96x96.png'
+import PreactLogo from './assets/favicon-96x96.png'
 
 export function App() {
   const [input, setInput] = useState('');
