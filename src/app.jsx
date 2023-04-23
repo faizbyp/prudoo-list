@@ -55,7 +55,7 @@ export function App() {
   return (
     <>
       <nav className='text-center py-3 bg-primary'>
-        <img src={PreactLogo} height={48} alt="Preact Todo List" />
+        <img src={PreactLogo} width={48} height={48} alt="Preact Todo List" />
       </nav>
 
       <div className="container">
