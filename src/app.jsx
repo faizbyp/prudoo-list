@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'preact/hooks'
 import { v4 as uuid } from 'uuid';
-import PreactLogo from './assets/preact.svg'
+import PreactLogo from '../public/favicon-96x96.png'
 
 export function App() {
   const [input, setInput] = useState('');
@@ -55,7 +55,7 @@ export function App() {
   return (
     <>
       <nav className='text-center py-3 bg-primary'>
-        <img src={PreactLogo} alt="Preact Todo List" />
+        <img src={PreactLogo} height={48} alt="Preact Todo List" />
       </nav>
 
       <div className="container">
