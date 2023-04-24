@@ -58,29 +58,31 @@ export function App() {
         <img src={PreactLogo} width={48} height={48} alt="Preact Todo List" />
       </nav>
 
-      <div className="container">
-        <form className='sticky-top row py-3 mx-1' onSubmit={handleSubmit}>
-          <input className='form-control form-control-lg text-center my-2' placeholder='Insert Task' value={input} type="text" onChange={(e) => {setInput(e.target.value)}} />
-          <button className='btn btn-lg btn-primary' type="submit">Add Task</button>
-        </form>
-        <div className="row">
-          <div className="col">
-            <ul className="list-unstyled">
-              {todos.map((todo) => (
-                <li key={todo.id} className='bg-warning p-2 my-2 rounded'>
-                  {todo.text}
-                  <button onClick={() => handleEdit(todo)} type="button" class="btn btn-light ms-2" data-bs-toggle="modal" data-bs-target="#editModal">
-                    <i class="bi bi-pencil-fill"></i>
-                  </button>
-                  <button type='button' className='btn btn-danger ms-2' onClick={() => handleDelete(todo.id)}>
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </li>
-              ))}
-            </ul>
+      <main>
+        <div className="container">
+          <form className='sticky-top row py-3 mx-1' onSubmit={handleSubmit}>
+            <input className='form-control form-control-lg text-center my-2' placeholder='Insert Task' value={input} type="text" onChange={(e) => {setInput(e.target.value)}} />
+            <button className='btn btn-lg btn-primary' type="submit">Add Task</button>
+          </form>
+          <div className="row">
+            <div className="col">
+              <ul className="list-unstyled">
+                {todos.map((todo) => (
+                  <li key={todo.id} className='bg-warning p-2 my-2 rounded'>
+                    {todo.text}
+                    <button onClick={() => handleEdit(todo)} type="button" class="btn btn-light ms-2" data-bs-toggle="modal" data-bs-target="#editModal">
+                      <i class="bi bi-pencil-fill"></i>
+                    </button>
+                    <button type='button' className='btn btn-danger ms-2' onClick={() => handleDelete(todo.id)}>
+                      <i class="bi bi-trash3-fill"></i>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
 
       <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
