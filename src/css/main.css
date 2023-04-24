@@ -10769,7 +10769,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
+main {
   max-width: 576px;
   margin: auto;
 }
