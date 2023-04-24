@@ -11,7 +11,7 @@ What I'll learn from this repo:
 
 - Preact basics
 - localStorage
-- Progressive Web Apps (I will turn it into those soon)
+- Progressive Web Apps
 - (More to go on the learning journey!)
 
 I'm following this [series](https://dev.to/joelynn/series/12791).
