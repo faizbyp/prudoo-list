@@ -2,6 +2,7 @@ import { useState, useEffect } from 'preact/hooks'
 import { v4 as uuid } from 'uuid';
 import PreactLogo from './assets/favicon-96x96.png'
 import addNotification from 'react-push-notification';
+import { Analytics } from '@vercel/analytics/react';
 
 export function App() {
   const [input, setInput] = useState('');
@@ -113,6 +114,8 @@ export function App() {
       <footer className="text-center py-3">
         <a href="https://www.linkedin.com/in/faizbyp/" target='_blank'>faizbyp</a> | <a href="https://github.com/faizbyp/prudoo-list" target='_blank'>Repo</a>
       </footer>
+
+      <Analytics />
     </>
   )
 }

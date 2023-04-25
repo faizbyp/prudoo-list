@@ -10,6 +10,7 @@
     "sass": "sass --watch src/css/main.scss:src/css/main.css"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.0.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.4",
     "preact": "^10.13.1",
