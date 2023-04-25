@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'preact/hooks'
 import { v4 as uuid } from 'uuid';
 import PreactLogo from './assets/favicon-96x96.png'
+import addNotification from 'react-push-notification';
+import { Analytics } from '@vercel/analytics/react';
 
 export function App() {
   const [input, setInput] = useState('');
@@ -30,12 +32,20 @@ export function App() {
     handleUpdateTodo(currentTodo.id, currentTodo);
   }
 
-  function handleDelete(id) {
+  function handleDelete(id, text) {
     if (confirm('Are you sure to delete?')) {
       const removeItem = todos.filter((todo) => {
         return todo.id !== id;
       });
       setTodos(removeItem);
+
+      addNotification({
+        title: `${text} deleted`,
+        subtitle: 'Prudoo List',
+        message: `${text} berhasil dihapus`,
+        duration: 5000,
+        native: true
+      })
     }
   }
 
@@ -73,7 +83,7 @@ export function App() {
                     <button onClick={() => handleEdit(todo)} type="button" class="btn btn-light ms-2" data-bs-toggle="modal" data-bs-target="#editModal">
                       <i class="bi bi-pencil-fill"></i>
                     </button>
-                    <button type='button' className='btn btn-danger ms-2' onClick={() => handleDelete(todo.id)}>
+                    <button type='button' className='btn btn-danger ms-2' onClick={() => handleDelete(todo.id, todo.text)}>
                       <i class="bi bi-trash3-fill"></i>
                     </button>
                   </li>
@@ -104,6 +114,8 @@ export function App() {
       <footer className="text-center py-3">
         <a href="https://www.linkedin.com/in/faizbyp/" target='_blank'>faizbyp</a> | <a href="https://github.com/faizbyp/prudoo-list" target='_blank'>Repo</a>
       </footer>
+
+      <Analytics />
     </>
   )
 }
