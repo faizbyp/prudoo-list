@@ -71,7 +71,7 @@ export function App() {
       <main>
         <div className="container">
           <form className='sticky-top row py-3 mx-1' onSubmit={handleSubmit}>
-            <input className='form-control form-control-lg text-center my-2' placeholder='Insert Task' value={input} type="text" onChange={(e) => {setInput(e.target.value)}} />
+            <input className='form-control form-control-lg text-center my-2' placeholder='Insert Task' value={input} type="text" onChange={(e) => {setInput(e.target.value)}} autoFocus />
             <button className='btn btn-lg btn-primary' type="submit">Add Task</button>
           </form>
           <div className="row">
