@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'preact/hooks'
 import { v4 as uuid } from 'uuid';
 import PreactLogo from './assets/favicon-96x96.png'
-import addNotification from 'react-push-notification';
 import { Analytics } from '@vercel/analytics/react';
 
 export function App() {
@@ -33,19 +32,11 @@ export function App() {
   }
 
   function handleDelete(id, text) {
-    if (confirm('Are you sure to delete?')) {
+    if (confirm(`Are you sure "${text}" is done?`)) {
       const removeItem = todos.filter((todo) => {
         return todo.id !== id;
       });
       setTodos(removeItem);
-
-      addNotification({
-        title: `${text} deleted`,
-        subtitle: 'Prudoo List',
-        message: `${text} berhasil dihapus`,
-        duration: 5000,
-        native: true
-      })
     }
   }
 
@@ -78,14 +69,16 @@ export function App() {
             <div className="col">
               <ul className="list-unstyled">
                 {todos.map((todo) => (
-                  <li key={todo.id} className='bg-warning p-2 my-2 rounded'>
-                    {todo.text}
-                    <button onClick={() => handleEdit(todo)} type="button" class="btn btn-light ms-2" data-bs-toggle="modal" data-bs-target="#editModal">
-                      <i class="bi bi-pencil-fill"></i>
-                    </button>
-                    <button type='button' className='btn btn-danger ms-2' onClick={() => handleDelete(todo.id, todo.text)}>
-                      <i class="bi bi-trash3-fill"></i>
-                    </button>
+                  <li key={todo.id} className='d-flex justify-content-between align-items-center gap-2 border border-primary px-3 py-2 my-2 rounded'>
+                    <p className='m-0'>{todo.text}</p>
+                    <div className='input-group w-auto flex-nowrap align-self-start'>
+                      <button onClick={() => handleEdit(todo)} type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                        <i class="bi bi-pencil-fill"></i>
+                      </button>
+                      <button type='button' className='btn btn-success' onClick={() => handleDelete(todo.id, todo.text)}>
+                        <i class="bi bi-check2-circle"></i>
+                      </button>
+                    </div>
                   </li>
                 ))}
               </ul>
