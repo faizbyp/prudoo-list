@@ -1,5 +1,5 @@
 // Importing fonts
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
 // Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../../node_modules/bootstrap/scss/functions";
@@ -22,7 +22,7 @@ $font-family-base: 'Ubuntu', sans-serif;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-main {
+#todo {
   max-width: 576px;
   margin: auto;
 }
