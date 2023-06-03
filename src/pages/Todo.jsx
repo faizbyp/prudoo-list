@@ -58,7 +58,7 @@ function Todo() {
         <img src={PreactLogo} width={48} height={48} alt="Preact Todo List" />
       </nav>
 
-      <main>
+      <main id='todo'>
         <div className="container">
           <form className='sticky-top row py-3 mx-1' onSubmit={handleSubmit}>
             <input className='form-control form-control-lg text-center my-2' placeholder='Insert Task' value={input} type="text" onChange={(e) => {setInput(e.target.value)}} autoFocus />
@@ -102,11 +102,6 @@ function Todo() {
           </div>
         </div>
       </div>
-
-      <footer className="text-center py-3">
-        <a href="https://www.linkedin.com/in/faizbyp/" target='_blank'>faizbyp</a> | <a href="https://github.com/faizbyp/prudoo-list" target='_blank'>Repo</a>
-      </footer>
-
     </>
   )
 }
