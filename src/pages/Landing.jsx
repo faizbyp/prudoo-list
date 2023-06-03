@@ -37,7 +37,7 @@ function Landing() {
           </div>
           <div className="col text-center text-md-start">
             <h1 className="fw-bold text-primary">What is Prudoo List?</h1>
-            <p><span className="fw-bold text-primary">Prudoo List</span> is a Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis itaque similique et laboriosam amet magni excepturi iusto autem soluta sapiente!</p>
+            <p><span className="fw-bold text-primary">Prudoo List</span> is a simple todo list made with Preact and Bootstrap 5.3. The todo list data is stored in the browser's localStorage. Prudoo list is injected with progressive web app technology so you can use it offline directly on your device, as a native app!</p>
           </div>
         </section>
         <section className="row align-items-center" style={{height: "512px"}}>
