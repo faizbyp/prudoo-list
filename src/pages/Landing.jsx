@@ -1,5 +1,5 @@
 import { Link } from "preact-router"
-import Logo from "../../public/manifest-icon-512.maskable.png"
+import Logo from "../assets/manifest-icon-512.maskable.png"
 
 function Landing() {
   return (
