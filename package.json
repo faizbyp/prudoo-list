@@ -16,6 +16,7 @@
     "preact": "^10.13.1",
     "preact-router": "^4.1.1",
     "react-push-notification": "^1.5.3",
+    "sass": "^1.62.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
