@@ -5,7 +5,7 @@ import Landing from './pages/Landing';
 
 export function App() {
   return (
-    <main>
+    <main data-bs-theme="dark">
       <Router>
         <Landing path='/' />
         <Todo path='/app' />
