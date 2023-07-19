@@ -12,11 +12,6 @@ function Landing() {
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav text-end">
-              <li class="nav-item">
-                <button type="button" class="btn text-white">
-                  <i class="bi bi-lamp-fill"></i>
-                </button>
-              </li>
               <li className="nav-item">
                 <Link href="/app" className="btn btn-outline-light ms-2">Start Writing</Link>
               </li>
