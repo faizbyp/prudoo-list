@@ -15,3 +15,7 @@ What I'll learn from this repo:
 - (More to go on the learning journey!)
 
 I'm following this [series](https://dev.to/joelynn/series/12791).
+
+### Website Preview
+
+![https://prudoo-list.vercel.app/](https://github.com/faizbyp/prudoo-list/assets/65883882/48af8e12-3549-4685-b1f2-454f653725ad)
